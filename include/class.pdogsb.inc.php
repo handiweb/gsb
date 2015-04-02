@@ -17,7 +17,7 @@
 
 class PdoGsb{   		
       	private static $serveur='mysql:host=localhost';
-      	private static $bdd='dbname=gsbV2';   		
+      	private static $bdd='dbname=gsb_frais';   		
       	private static $user='root' ;    		
       	private static $mdp='' ;	
 		private static $monPdo;
@@ -54,7 +54,7 @@ class PdoGsb{
  * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 */
 	public function getInfosVisiteur($login, $mdp){
-		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur 
+		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom, visiteur.type as type from visiteur 
 		where visiteur.login='$login' and visiteur.mdp='$mdp'";
 		$rs = PdoGsb::$monPdo->query($req);
 		$ligne = $rs->fetch();
@@ -297,5 +297,25 @@ class PdoGsb{
 		where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		PdoGsb::$monPdo->exec($req);
 	}
+        
+/**
+ * Retourne la liste des visiteurs
+ * @return un tableau des visiteurs
+ */
+        
+        public function getVisiteurs(){
+            $req = "select nom from visiteur order by nom asc";
+            $res = PdoGsb::$monPdo->query($req);
+            $lesVisiteurs=array();
+            $laLigne = $res->fetch();
+            while ($laLigne != null)
+            {
+                $lesVisiteurs = $laLigne;
+                $res->fetch();
+            }
+            
+            return $lesVisiteurs;
+        }
+        
 }
 ?>
