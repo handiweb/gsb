@@ -1,25 +1,21 @@
-﻿ <div id="contenu">
+<div id="contenu">
       <h2>Validation des frais par visiteur</h2>
             <form action="index.php?uc=validerFrais&action=valFrais" method="post">
       		<label class="titre">Choisir le visiteur :</label>
-			<select name="Visiteur" class="zone">	
+			
+                <select id="lstVisiteur" class="zone">	
                         <?php
 			foreach ($lesVisiteurs as $unVisiteur)
 			{ 
-				echo '<option>'.$unVisiteur.'</option>';
+                            $nom = $unVisiteur['nom'];
+				echo '<option value="'.$nom.'">'.$nom.'</option>';
 			}
                         ?>
                         </select>
                 
-			<label class="titre">Mois :</label> <input class="zone" type="text" name="dateValid" size="12" />
-
-      <div class="corpsForm">
-         
-      <p>
-	 
-        <label>Visiteur : </label>
-        <select id="lstMois" name="lstMois">
-            <?php
+		<label class="titre">Mois :</label> 
+                <select id="lstMois">  
+                <?php
 			foreach ($lesMois as $unMois)
 			{
 			    $mois = $unMois['mois'];
@@ -36,17 +32,21 @@
 				}
 			
 			}
-           
+               
 		   ?>    
-            
-        </select>
-      </p>
-      </div>
-      <div class="piedForm">
+                     </select>   
+                
+                
+                <div class="piedForm">
       <p>
         <input id="ok" type="submit" value="Valider" size="20" />
         <input id="annuler" type="reset" value="Effacer" size="20" />
       </p> 
       </div>
-        
+                
       </form>
+                <div>
+                    <p>
+                        <?php echo $idVisiteur ?>
+                    </p>
+                </div>
