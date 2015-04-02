@@ -13,7 +13,7 @@ switch($action){
 		include("vues/v_listeMois.php");
 		break;
 	}
-	case 'voirEtatFrais':{
+	case 'voirEtatFrais':{                
 		$leMois = $_REQUEST['lstMois']; 
 		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
 		$moisASelectionner = $leMois;
