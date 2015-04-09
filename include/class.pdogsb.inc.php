@@ -322,6 +322,7 @@ class PdoGsb {
         return $lesLignes;
     }
 
+<<<<<<< HEAD
     public function getIdSelectionne($nomVisiteur){
         $req = "select id from visiteur where nom = '$nomVisiteur'";
         $res = PdoGsb::$monPdo->query($req);
@@ -329,5 +330,7 @@ class PdoGsb {
         $visiteur = $laLigne['id'];
         return $visiteur;
     }
+=======
+>>>>>>> ce27b56da744b874fa2d7be2e3f7800972630ac2
 }
 ?>

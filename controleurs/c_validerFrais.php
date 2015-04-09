@@ -13,6 +13,7 @@ switch($action){
 		break;
 	}
         case 'valFrais':{
+<<<<<<< HEAD
             $lesVisiteurs=$pdo->getVisiteurs();
             $lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
             $leVisiteur = $_REQUEST['listVisiteur'];
@@ -35,3 +36,17 @@ switch($action){
         }
 }
 ?>
+=======
+            $leVisiteur = $_REQUEST['lstVisiteur'];
+            $leMois = $_REQUEST['lstMois'];
+            $lesVisiteurs=$pdo->getVisiteurs();
+            $lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
+            $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur,$leMois);
+            
+            include("vues/v_listeVisiteurs.php");
+            
+        }
+}
+
+include("vues/v_validerFrais.php");
+>>>>>>> ce27b56da744b874fa2d7be2e3f7800972630ac2
