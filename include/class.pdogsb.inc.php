@@ -316,7 +316,7 @@ class PdoGsb {
      * @return un tableau des visiteurs
      */
     public function getVisiteurs() {
-        $req = "select nom from visiteur order by nom asc";
+        $req = "select nom from visiteur where type=1 order by nom asc";
         $res = PdoGsb::$monPdo->query($req);
         $lesLignes = $res->fetchAll();
         return $lesLignes;
@@ -330,4 +330,5 @@ class PdoGsb {
         $visiteur = $laLigne['id'];
         return $visiteur;
     }
+    
 }

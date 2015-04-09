@@ -18,12 +18,15 @@
                                 echo $_SESSION['prenom']."  ".$_SESSION['nom']."<br>".$typevisiteur;
                                 ?>
 			</li>
+                        <?php
+           if ($_SESSION['type']==1) { echo '
            <li class="smenu">
               <a href="index.php?uc=gererFrais&action=saisirFrais" title="Saisie fiche de frais ">Saisie fiche de frais</a>
            </li>
            <li class="smenu">
               <a href="index.php?uc=etatFrais&action=selectionnerMois" title="Consultation de mes fiches de frais">Mes fiches de frais</a>
-           </li>
+           </li>' ;}
+           ?>
            <?php
            if ($_SESSION['type']==2) { echo '
            <li class="smenu">
