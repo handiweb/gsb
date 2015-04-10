@@ -33,7 +33,7 @@
               <a href="index.php?uc=validerFrais&action=selectionnerVisiteur" title="Valider fiche de frais">Valider fiches de frais</a>
            </li>
            <li class="smenu">
-              <a href="index.php?uc=suivreFrais&action=selectionnerMois" title="Suivre le paiement fiches de frais">Suivre le paiement fiches de frais</a>
+              <a href="index.php?uc=suivreFrais&action=selectionnerVisiteur" title="Suivre le paiement fiches de frais">Suivre le paiement fiches de frais</a>
            </li>
  	    ';}
            ?>

@@ -79,7 +79,7 @@ class PdoGsb {
      */
     public function getLesFraisHorsForfait($idVisiteur, $mois) {
         $req = "select * from lignefraishorsforfait where lignefraishorsforfait.idvisiteur ='$idVisiteur' 
-		and lignefraishorsforfait.mois = '$mois' ";
+		and lignefraishorsforfait.mois = '$mois' order by date";
         $res = PdoGsb::$monPdo->query($req);
         $lesLignes = $res->fetchAll();
         $nbLignes = count($lesLignes);
