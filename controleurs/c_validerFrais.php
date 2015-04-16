@@ -5,7 +5,7 @@ $action = $_REQUEST['action'];
 switch($action){
 	case 'selectionnerVisiteur':{
 		$lesVisiteurs=$pdo->getVisiteurs();
-                $lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
+                $lesMois=$pdo->getLesMois();
 		// Afin de sélectionner par défaut le dernier mois dans la zone de liste
 		// on demande toutes les clés, et on prend la première,
 		// les mois étant triés décroissants
@@ -15,7 +15,7 @@ switch($action){
         case 'valFrais':{
 
             $lesVisiteurs=$pdo->getVisiteurs();
-            $lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
+            $lesMois=$pdo->getLesMois();
             $leVisiteur = $_REQUEST['listVisiteur'];
             $leMois = $_REQUEST['listMois'];
             $moisASelectionner = $leMois;

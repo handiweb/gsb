@@ -9,13 +9,11 @@
       </div>  
         <ul id="menuList">
 			<li >
-				  Visiteur :<br>
-                                
-				<?php 
+				 <?php 
                                 $typevisiteur;
-                                if ($_SESSION['type']==1) {$typevisiteur = "Visiteur médical";}
-                                if ($_SESSION['type']==2) {$typevisiteur = "Comptable";}
-                                echo $_SESSION['prenom']."  ".$_SESSION['nom']."<br>".$typevisiteur;
+                                if ($_SESSION['type']==1) {$typevisiteur = "Visiteur :";}
+                                if ($_SESSION['type']==2) {$typevisiteur = "Comptable :";}
+                                echo $typevisiteur." ".$_SESSION['prenom']."  ".$_SESSION['nom']."<br>";
                                 ?>
 			</li>
                         <?php
